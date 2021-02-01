@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta
 
 
 def main():
@@ -16,21 +16,18 @@ def main():
     
     slots_per_day = define_slots(work_hours_per_day, slot_duration_int)
     slot_list = return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day)
-    print(len(slot_list))
 
 
 def return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day):
     # return the list of slots per day given the number of days
     slot_list = []
-    
     while start_datetime <= end_datetime:
         slot = 0
-        #print(start_datetime)
         while slot < slots_per_day:
             slot_list.append(datetime.strftime(start_datetime, '%Y-%m-%d %H:%M'))
             slot += 1
             start_datetime += timedelta(minutes=slot_duration_int)
-        start_datetime = start_datetime + timedelta(hours=12)
+        start_datetime += timedelta(hours=12)
     return slot_list
 
 
