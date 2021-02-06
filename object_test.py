@@ -24,6 +24,8 @@ class resource:
     self.hospital = hospital
     self.deptartment = deptartment
     self.division = division
+    self.epic_id = epic_id
+    self.npi = npi
     self.f_name = f_name
     self.m_initial = m_initial
     self.l_name = l_name
