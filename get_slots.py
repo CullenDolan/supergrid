@@ -1,21 +1,25 @@
 from datetime import datetime, timedelta
 
 
-def main():
+def get_time_slots():
     # define all the varibles (what probably gets passed in)
-    year_start, month_start, day_start = 2018, 1, 1
+    year_start, month_start, day_start = 2021, 1, 1
     hour_start, minute_start = 6, 0
-    year_end, month_end, day_end = 2023, 12, 31
-    hour_end, minute_end = 18, 0
-    work_hours_per_day = 12
-    slot_duration_int = 5
+    year_end, month_end, day_end = 2021, 2, 28
+    hour_end, minute_end = 18, 0    # 6:00PM
+    work_hours_per_day = 12 
+    slot_duration_int = 5           #5 min slots    
 
     # define the  datetimes
     start_datetime = datetime(year_start, month_start, day_start, hour_start, minute_start)
     end_datetime = datetime(year_end, month_end, day_end, hour_end, minute_end)
     
+    # determine how many slots per day
     slots_per_day = define_slots(work_hours_per_day, slot_duration_int)
+
+    # create a list of slots
     slot_list = return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day)
+    return slot_list
 
 
 def return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day):
@@ -35,7 +39,3 @@ def define_slots(work_hours_per_day, slot_duration_int):
     # slots per hour * number of working hours
     mins_in_hr = 60
     return mins_in_hr / slot_duration_int * work_hours_per_day
-
-
-if __name__ == '__main__':
-    main()
