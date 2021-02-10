@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 
-def main():
+def get_slot_list():
     # define all the varibles (what probably gets passed in)
     year_start, month_start, day_start = 2021, 1, 1
     hour_start, minute_start = 6, 0
@@ -19,7 +19,7 @@ def main():
 
     # create a list of slots
     slot_list = return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day)
-    print(slot_list)
+    return slot_list
 
 
 def return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day):

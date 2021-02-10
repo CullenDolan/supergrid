@@ -1,7 +1,8 @@
-import get_slots
-def printing_func():
-    print(type(slots))
-    print(slots)
+from get_slots import get_slot_list
+
+slots = get_slot_list()
+print(type(slots))
+print(slots)
 
 """from datetime import datetime
 
@@ -22,7 +23,3 @@ else:
     print('That time slot is taken by ' + str(new_dict[datetime(ask_year, ask_month, ask_day, ask_hour, ask_min)]))
 
 print(new_dict)"""
-
-if __name__ == "__main":
-    printing_func()
-    get_slots.get_time_slots()
