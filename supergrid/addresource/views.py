@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Add Providers to the schedule")
+    return HttpResponse("Choose a provder to add to the schdeule")
