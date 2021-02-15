@@ -17,7 +17,7 @@ def get_slot_list():
     # determine how many slots per day
     slots_per_day = define_slots(work_hours_per_day, slot_duration_int)
 
-    # create a list of slots
+    # create an object list of slots
     slot_list = return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_day)
     return slot_list
 
@@ -36,7 +36,7 @@ def return_slot_list(start_datetime, end_datetime, slot_duration_int, slots_per_
 
 
 def define_slots(work_hours_per_day, slot_duration_int):
-    # slots per hour * number of working hours
+    # set the slots per hour * number of working hours 
     mins_in_hr = 60
     return mins_in_hr / slot_duration_int * work_hours_per_day
 
