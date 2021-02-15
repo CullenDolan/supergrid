@@ -1,5 +1,7 @@
 from get_slots import get_time_slots 
 
+
+# class for the building
 class building_one_slots:
     def __init__(self, allocated_time_slots, allocation):
         self.allocated_time_slots = allocated_time_slots
